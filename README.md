@@ -97,6 +97,14 @@ cdk bootstrap aws://ACCOUNTNUMBER/us-east-1
 ```bash
 cdk diff
 ```
+# run to get the ECR uri end point
+```bash
+aws ecr describe-repositories
+```
+# this will get the password of the ECR registry and give it the docker login command 
+```bash
+aws ecr get-login-password --region us-west-1 | docker login --username AWS --password-stdin "Repository URI"
+```
 # deploy the complete stack
 ```bash
 cdk deploy
