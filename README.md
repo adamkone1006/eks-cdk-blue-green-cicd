@@ -116,13 +116,6 @@ aws ecr get-login-password --region us-west-1 | docker login --username AWS --pa
 ```bash
 cdk deploy
 ```
-# when finished with the demo delete the created resources
-# note that the flask resources were created independently of the cdk and must be deleted first
-```bash
-kubectl delete svc/flask-svc deploy/flask-deployment
-cdk destroy
-```
-
 You may be asked to confirm the creation of the roles and authorization before the CloudFormation is executed, for which, you can respond with a “Y”.
 
 The infrastructure will take some time to be created, please wait until you see the Output of CloudFormation printed on the terminal. Until then, take time to review the CDK code in the below file: cdk/lib/cdk-stack.ts
