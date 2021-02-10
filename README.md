@@ -52,9 +52,12 @@ npm --version
 sudo npm install -g aws-cdk@1.30.0 --force
 sudo npm install -g typescript@latest
 ```
-Run git clone on this repository from Cloud9:
+Install Git and Run git clone on this repository from Cloud9:
 
 ```bash
+sudo yum install git
+git --version
+
 git clone https://github.com/aws-samples/amazon-eks-cdk-blue-green-cicd.git amazon-eks-cicd-codebuild-eks-alb-bg
 ```
 
