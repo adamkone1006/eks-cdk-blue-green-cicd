@@ -60,6 +60,13 @@ git --version
 git clone https://github.com/aws-samples/amazon-eks-cdk-blue-green-cicd.git amazon-eks-cicd-codebuild-eks-alb-bg
 ```
 
+# Install Docker:
+```bash
+sudo yum install docker -y
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
 # Once cloned, run the below commands:
 ```bash
 cd amazon-eks-cicd-codebuild-eks-alb-bg
