@@ -90,15 +90,24 @@ cdk ls
 cdk synth
 ```
 # if you have not used cdk in this account previously you may be advised to create the necessary resources in the account
-$ cdk bootstrap aws://ACCOUNTNUMBER/us-east-1
+```bash
+cdk bootstrap aws://ACCOUNTNUMBER/us-east-1
+```
+```bash
 # check the diff before deployment
-$ cdk dif
+```bash
+cdk diff
+```
 # deploy the complete stack
-$ cdk deploy
+```bash
+cdk deploy
+```
 # when finished with the demo delete the created resources
 # note that the flask resources were created independently of the cdk and must be deleted first
-$ kubectl delete svc/flask-svc deploy/flask-deployment
-$ cdk destroy
+```bash
+kubectl delete svc/flask-svc deploy/flask-deployment
+cdk destroy
+```
 
 You may be asked to confirm the creation of the roles and authorization before the CloudFormation is executed, for which, you can respond with a “Y”.
 
