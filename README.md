@@ -93,7 +93,6 @@ cdk synth
 ```bash
 cdk bootstrap aws://ACCOUNTNUMBER/us-east-1
 ```
-```bash
 # check the diff before deployment
 ```bash
 cdk diff
