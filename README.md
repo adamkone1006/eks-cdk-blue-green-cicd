@@ -41,10 +41,9 @@ chmod +x ./kubectl
 sudo mv ./kubectl /usr/local/bin/kubectl
 kubectl help
 ```
-Prepare CDK prerequisite:
+# Prepare CDK prerequisite:
 
 ```bash
-//sudo yum install -y npm
 curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 sudo yum install nodejs
 npm --version
@@ -52,7 +51,7 @@ npm --version
 sudo npm install -g aws-cdk@1.30.0 --force
 sudo npm install -g typescript@latest
 ```
-Install Git and Run git clone on this repository from Cloud9:
+# Install Git and Run git clone on this repository from Cloud9:
 
 ```bash
 sudo yum install git
@@ -61,12 +60,12 @@ git --version
 git clone https://github.com/aws-samples/amazon-eks-cdk-blue-green-cicd.git amazon-eks-cicd-codebuild-eks-alb-bg
 ```
 
-Once cloned, run the below commands:
+# Once cloned, run the below commands:
 ```bash
 cd amazon-eks-cicd-codebuild-eks-alb-bg
 ```
 
-Note: For this workshop, we are using CDK version 1.30. If using the latest CDK version using "npm install -g aws-cdk" (without a version specification) then you would need to modify the EKS construct to include version number too.
+# Note: For this workshop, we are using CDK version 1.30. If using the latest CDK version using "npm install -g aws-cdk" (without a version specification) then you would need to modify the EKS construct to include version number too.
 
 
 ```bash
@@ -76,7 +75,7 @@ git commit -m "Initial Commit"
 git status
 git log
 ```
-Now run the CDK steps as below:
+# Now run the CDK steps as below:
 
 ```bash
 cd cdk
@@ -85,13 +84,22 @@ npm install
 npm run build
 cdk ls
 ```
-Ensure the output is CdkStackEksALBBg
+# Ensure the output is CdkStackEksALBBg
 
 ```bash
 cdk synth
-cdk bootstrap aws://$ACCOUNT_ID/$AWS_REGION
-cdk deploy
 ```
+# if you have not used cdk in this account previously you may be advised to create the necessary resources in the account
+$ cdk bootstrap aws://ACCOUNTNUMBER/us-east-1
+# check the diff before deployment
+$ cdk dif
+# deploy the complete stack
+$ cdk deploy
+# when finished with the demo delete the created resources
+# note that the flask resources were created independently of the cdk and must be deleted first
+$ kubectl delete svc/flask-svc deploy/flask-deployment
+$ cdk destroy
+
 You may be asked to confirm the creation of the roles and authorization before the CloudFormation is executed, for which, you can respond with a “Y”.
 
 The infrastructure will take some time to be created, please wait until you see the Output of CloudFormation printed on the terminal. Until then, take time to review the CDK code in the below file: cdk/lib/cdk-stack.ts
