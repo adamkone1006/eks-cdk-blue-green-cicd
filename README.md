@@ -49,8 +49,8 @@ curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
 sudo yum install nodejs
 npm --version
 
-npm install -g aws-cdk@1.30.0 --force
-npm install -g typescript@latest
+sudo npm install -g aws-cdk@1.30.0 --force
+sudo npm install -g typescript@latest
 ```
 Run git clone on this repository from Cloud9:
 
