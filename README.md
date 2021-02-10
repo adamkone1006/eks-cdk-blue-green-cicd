@@ -98,7 +98,7 @@ cdk synth
 ```
 # if you have not used cdk in this account previously you may be advised to create the necessary resources in the account
 ```bash
-cdk bootstrap aws://ACCOUNTNUMBER/us-east-1
+cdk bootstrap aws://ACCOUNTNUMBER/us-west-1
 ```
 # check the diff before deployment
 ```bash
