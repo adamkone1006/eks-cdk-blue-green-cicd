@@ -44,7 +44,11 @@ kubectl help
 Prepare CDK prerequisite:
 
 ```bash
-sudo yum install -y npm
+//sudo yum install -y npm
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+sudo yum install nodejs
+npm --version
+
 npm install -g aws-cdk@1.30.0 --force
 npm install -g typescript@latest
 ```
